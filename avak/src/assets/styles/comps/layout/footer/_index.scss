@@ -1,0 +1,13 @@
+@use "@styles/settings/index" as *;
+@use "@styles/comps/layout/logo" as *;
+
+.footer {
+  height: 300px;
+  width: 100vw;
+
+  border: 1px dotted $color-primary;
+}
+
+.footerLogo {
+  @extend .logo;
+}

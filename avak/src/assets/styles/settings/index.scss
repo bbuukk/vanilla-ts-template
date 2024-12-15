@@ -1,0 +1,42 @@
+@use "./variables/index.scss" as *;
+@forward "./variables/index.scss";
+
+/* colors */
+$color-primary: $color-blu-indigo;
+$color-secondary: $color-wh-lightsilv;
+
+/* $blu-argentinian: #6cb4ee; // Argentinan Blue */
+/* $blu-defrance: #318ce7; // Blue de france */
+
+$color-accent: $color-blu-argentinian;
+$color-downplay: $color-wh-silver;
+
+/* $color-accent:  */
+/* $rd-decapink: #ff3131; // Deep Carmine Pink */
+
+$color-highlight: $color-rd-decapink;
+
+/* Downplay */
+
+/* $color-background */
+$color-text: $color-blck-rich;
+/* $color-error (often red) */
+/* $color-success (often green) */
+/* $color-warning (often yellow) */
+/* $color-info (often blue) */
+
+/* $color-danger */
+/* $color-positive */
+/* $color-negative */
+/* $color-neutral */
+/* $color-highlight */
+
+/* $color-hover */
+/* $color-active */
+/* $color-disabled */
+/* $color-focused */
+
+$color-background: $color-wh-cultured;
+
+/* fonts */
+$font-primary: $font-ubuntu;

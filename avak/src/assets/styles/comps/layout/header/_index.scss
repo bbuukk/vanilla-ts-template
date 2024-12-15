@@ -1,0 +1,57 @@
+@use "@styles/elements/index" as *;
+@use "@styles/settings/index" as *;
+
+@use "search" as *;
+@use "@styles/comps/layout/logo" as *;
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  max-height: 200px;
+  width: 100vw;
+}
+
+.headerNav {
+  height: 100%;
+}
+
+.headerNav_list {
+  @extend .nav_list;
+  gap: 20px;
+}
+
+.headerNav_item {
+  button {
+    padding: 20px 10px;
+
+    border-bottom: 1px solid transparent;
+
+    color: $color-primary;
+
+    transition: border-color 0.25s ease-in-out;
+  }
+
+  &:hover {
+    button {
+      border-color: $color-accent;
+    }
+  }
+}
+
+.header_loginBtn {
+  @extend .link--primary;
+}
+
+.headerLogo {
+  @extend .logo;
+}
+
+.headerLogo__lettersPath {
+  @extend .logo__lettersPath;
+}
+
+.headerLogo__ovalPath {
+  @extend .logo__ovalPath;
+}
