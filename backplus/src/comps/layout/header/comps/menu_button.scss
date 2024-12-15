@@ -1,0 +1,15 @@
+:host {
+  nav {
+    display: none;
+  }
+
+  ::slotted(button) {
+    height: 100% !important;
+  }
+}
+
+:host(.open) {
+  nav {
+    display: block;
+  }
+}
