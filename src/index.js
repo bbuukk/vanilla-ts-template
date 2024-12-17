@@ -1,4 +1,4 @@
-import './utils/dom.util.js';
+import '../backplus/src/utils/dom.util.js';
 
 import 'assets/styles/global.scss';
 

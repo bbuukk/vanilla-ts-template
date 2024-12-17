@@ -5,10 +5,10 @@
 
 <h1 align="center">
   <div >
-<span > <!-- <a href="">  -->Plus➕🔋</span>
+<span > <!-- <a href="">  -->AVAK</span>
   </div>
   <br>
-<span align="center"> Vanilla.js e-commerce web app</span>
+<span align="center"> Vanilla.ts e-commerce web app</span>
 </h3>
 
 <!--
