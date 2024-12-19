@@ -1,0 +1,27 @@
+@use 'settings/index' as *;
+@use 'elements/index' as *;
+@use 'utils/index' as *;
+
+@use 'settings/reset.scss' as *;
+@use 'settings/normalize.scss' as *;
+
+html {
+  overscroll-behavior: none;
+  font-family: $font-ubuntu;
+
+  body {
+    scroll-behavior: smooth;
+
+    overflow: hidden;
+
+    font-weight: 400;
+
+    color: $color-primary;
+
+    background-color: $color-background;
+
+    a {
+      cursor: pointer;
+    }
+  }
+}

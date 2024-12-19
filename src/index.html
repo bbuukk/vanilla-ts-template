@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- TODO: fix showing icon -->
+    <link rel="icon" type="image/svg+xml" href="/images/icons/logo.svg" />
+    <!-- TODO: change to ico -->
+    <link rel="icon" type="image/x-icon" href="/images/icons/logo.svg" />
+
+    <title>Bohdan Buchok - Portfolio 2024</title>
+
+    <!-- todo
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/icons/app.webmanifest">
+    <link rel="mask-icon" href="/assets/images/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/assets/images/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-config" content="/assets/images/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- preload font stylesheet -->
+    <link
+      rel="preload"
+      as="style"
+      crossorigin
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500;700&display=swap&subset=latin&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+    />
+
+    <!-- preload fonts that is in stylesheeet above-->
+
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/l/font?kit=4iCv6KVjbNBYlgoCjC3Tsn68VsYkx8hPoBxA_kCrUfUpaA2kPQWV4YTNuMLDMF1fO-TPfi3SKIsyWP9kO5XLoTsZXtGo8Q&skey=d8a1e01f6daf5892&v=v20"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/l/font?kit=4iCv6KVjbNBYlgoC1CzTsn68VsYkx8hPoBxA_kCrUfUpaA2kPQWV4YTNuMLDMF1fO-TPfi3SKIsyWP9kO5XLoTsZXtGo8Q&skey=c70d0e00360563fb&v=v20"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/l/font?kit=4iCv6KVjbNBYlgoCxCvTsn68VsYkx8hPoBxA_kCrUfUpaA2kPQWV4YTNuMLDMF1fO-TPfi3SKIsyWP9kO5XLoTsZXtGo8Q&skey=403363908a1ded4d&v=v20"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- load font as stylesheet -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500;700&display=swap&subset=latin&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+      rel="stylesheet"
+    />
+  </head>
+  <!-- todo accessibility features -->
+
+  <script type="module" defer src="/index.ts"></script>
+  <body>
+    <div class="asideNavbar">
+      <div class="asideNavbar__imageContainer">
+        <a href="#legend">
+          <svg
+            class="asideNavbar__logotype"
+            width="100"
+            height="100"
+            viewBox="0 0 100 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+          >
+            <title id="svgTitle">My personal logotype</title>
+            <desc id="svgDesc">
+              A black circle inside a square with a black border
+            </desc>
+            <rect x="5" y="5" width="90" height="90" />
+            <rect
+              x="5"
+              y="5"
+              width="90"
+              height="90"
+              stroke="black"
+              stroke-width="10"
+            />
+            <circle cx="50.5" cy="50.5" r="12.5" fill="black" />
+          </svg>
+        </a>
+      </div>
+      <nav class="asideNavbarNav">
+        <ul class="asideNavbarNav__list">
+          <li class="asideNavbarNav__item">
+            <a href="#works" class="asideNavbarNav__link"><span>works</span></a>
+          </li>
+
+          <li class="asideNavbarNav__item">
+            <a href="#about" class="asideNavbarNav__link"><span>about</span></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main class="mainContainer">
+      <div class="legend" id="legend">
+        <figure class="legend__figure">
+          <img
+            class="legend__image"
+            src="/images/authorPhoto.png"
+            width="800"
+            height="500"
+          />
+          <figcaption class="legend__caption">
+            <h1 class="legend__name">Bohdan Buchok</h1>
+            <h5 class="legend__nickname">
+              <a href="https://github.com/bbuukk">bbuukk</a> -
+              <span>he/him</span>
+            </h5>
+            <h5 class="legend__interests">
+              Full-stack, JS, web perfomance, accessibility & linux
+            </h5>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="content">
+        <!-- tell about technologies i used, mini resume section -->
+
+        <section class="content_intro">
+          <h2>Hi! I am web dev</h2>
+          <p>
+            I make sites. Appealing, fast & reliable accesible ones. I do this
+            because I enjoy creating anything from nothing
+          </p>
+        </section>
+
+        <section class="content__projects" id="works">
+          <h2>I am proud of</h2>
+        </section>
+
+        <!-- about me as personality -->
+        <section class="content__about" id="about">
+          <h2>Get to know me better</h2>
+          <!-- why web dev -->
+          <!-- <p> -->
+          <!--   I am a web dev I am very dedicated to web, as i think this platworm -->
+          <!--   is very promising in the future. I want to bring something new to -->
+          <!--   world, that will benefit all people. I am dedicated to -->
+          <!--   accessibility, as i believe it helps make web place. I like to dig -->
+          <!--   deep, so i am constantly learning how to make load times faster. I -->
+          <!--   have experience with many technologies. MERN, Next.js, Vanilla.js, -->
+          <!--   php+Laravel, ruby+ror web performance geek tried a lot of frameworks -->
+          <!--   (ror, mern, next.js, php, vanilla.js) vanilla.js enjoyer, love to -->
+          <!--   work from scratch and be creative to a team that shares my -->
+          <!--   excitement for creating exceptional software. I am a professional, -->
+          <!--   who wants to work in the coolest people in industry. -->
+          <!-- </p> -->
+          <!-- tell them about vinnytsia -->
+          <!-- about me: i am from ukraine (ukraine flag) -->
+          <!-- link to find latest news from ukraine -->
+          <!-- support ukraine link -->
+        </section>
+        <section class="content__connect" id="contacts">
+          <h2>Create together</h2>
+          <!-- links -->
+        </section>
+      </div>
+
+      <!-- <ul class="legendLinkTree"> -->
+      <!--   <li class="legendLinkTree__item"> -->
+      <!--     <span class="material-icons">location_on</span> -->
+      <!--     <a href="">Kyiv, Ukraine</a> -->
+      <!--   </li> -->
+      <!--   <li class="legendLinkTree__item"> -->
+      <!--     <span class="material-icons">mail</span> -->
+      <!--     <a href="mailto:bohdanbuchok@gmail.com">bohdanbuchok@gmail.com</a> -->
+      <!--   </li> -->
+      <!--   <li class="legendLinkTree__item"> -->
+      <!--     <span class="material-icons">link</span> -->
+      <!--     <a href="https://www.linkedin.com/in/bohdanbuchok/">LinkedIn</a> -->
+      <!--   </li> -->
+      <!--   <li class="legendLinkTree__item"> -->
+      <!--     <span class="material-icons">link</span> -->
+      <!--     <a href="https://www.linkedin.com/in/bohdanbuchok/">GitHub</a> -->
+      <!--   </li> -->
+      <!-- </ul> -->
+    </main>
+  </body>
+</html>
