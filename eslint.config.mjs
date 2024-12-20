@@ -41,8 +41,9 @@ export default [
     rules: {
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-non-null-assertion': 'off',
+      'space-before-function-paren': 'off',
+
       semi: [2, 'always']
     }
   }
 ];
-

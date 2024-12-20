@@ -1,47 +1,43 @@
+import getPageContent from './getPageContent.service';
+
 export interface IRouter {
   init: () => void;
-  go: (route: string, addToHistory?: boolean) => void;
+  go: (route: string, addToHistory?: boolean) => Promise<void>;
 }
 
 const Router: IRouter = {
-  init: () => {
-    $$('a.inLink').forEach((e) => {
-      const anchorElement = e as HTMLAnchorElement;
+  init: async () => {
+    await Router.go(location.pathname, false)
+      .then(() => {
+        const internalLinks = $$('a.inLink');
 
-      anchorElement.addEventListener('click', (event) => {
-        event.preventDefault();
-        const url = new URL(anchorElement.href).pathname;
+        internalLinks.forEach((e) => {
+          const anchorElement = e as HTMLAnchorElement;
 
-        Router.go(url);
+          anchorElement.on('click', (event) => {
+            event.preventDefault();
+
+            const url = new URL(anchorElement.href).pathname;
+
+            Router.go(url);
+          });
+        });
+      })
+      .catch((error) => {
+        // TODO: display error screen
+        console.error('Error during router initialization:', error);
       });
-    });
 
     window.on('popstate', (event) => {
       Router.go(event.state.route, false);
     });
-
-    Router.go(location.pathname, false);
   },
-  go: async (route: string, addToHistory = true) => {
+  go: async (route: string, addToHistory = true): Promise<void> => {
     if (addToHistory) {
       history.pushState({ route }, 'null', route);
     }
 
-    let pageContent = '';
-
-    switch (route) {
-      case '/google':
-        pageContent = await fetch('/pages/google.html').then((res) =>
-          res.text()
-        );
-        break;
-      case '/':
-        pageContent = await fetch('/pages/home.html').then((res) => res.text());
-        break;
-      default:
-        pageContent = '<h1>404 - Page Not Found</h1>';
-        break;
-    }
+    const pageContent = await getPageContent(route);
 
     const mainElement = $('main');
     if (mainElement) {

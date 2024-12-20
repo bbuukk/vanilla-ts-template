@@ -1,28 +1,50 @@
 import { IRouter } from '../services/router.service';
 
+type QuerySelector = (
+  this: Document | HTMLElement,
+  args: string
+) => Element | null;
+
+type QuerySelectorAll = (
+  this: Document | HTMLElement,
+  args: string
+) => NodeListOf<Element>;
+
+type AddEventListener = <K extends keyof WindowEventMap>(
+  this: Window | Document | HTMLElement,
+  event: K,
+  listener: (
+    this: Window | Document | HTMLElement,
+    ev: WindowEventMap[K]
+  ) => void,
+  options?: AddEventListenerOptions | boolean
+) => void;
+
+type RemoveEventListener = <K extends keyof WindowEventMap>(
+  this: Window | Document | HTMLElement,
+  event: K,
+  listener: (
+    this: Window | Document | HTMLElement,
+    ev: WindowEventMap[K]
+  ) => void,
+  options?: EventListenerOptions | boolean
+) => void;
+
 declare global {
-  interface DomUtils {
-    $: (args: string) => Element | null;
-    $$: (args: string) => NodeListOf<Element>;
-    on: (
-      eventType: string,
-      listener: EventListenerOrEventListenerObject,
-      options?: boolean | AddEventListenerOptions
-    ) => void;
-    off: (
-      eventType: string,
-      listener: EventListenerOrEventListenerObject,
-      options?: boolean | EventListenerOptions
-    ) => void;
+  interface HasDomUtils {
+    $: QuerySelector;
+    $$: QuerySelectorAll;
+    on: AddEventListener;
+    off: RemoveEventListener;
   }
 
   // eslint-disable-next-line
-  interface Document extends DomUtils { }
+  interface Document extends HasDomUtils { }
 
   // eslint-disable-next-line
-  interface HTMLElement extends DomUtils { }
+  interface HTMLElement extends HasDomUtils { }
 
-  interface Window extends DomUtils {
+  interface Window extends HasDomUtils {
     _app: {
       router: IRouter;
     };
@@ -32,17 +54,9 @@ declare global {
   declare let $$: (args: string) => NodeListOf<Element>;
 }
 
-export { };
-
-  addEventListener<K extends keyof WindowEventMap>(
-    event: K,
-    listener:
-      | ((this: Window | Document | HTMLElement, ev: WindowEventMap[K]) => void)
-      | null,
-    options?: AddEventListenerOptions | boolean
-  ): void;
-  addEventListener(
-    type: string,
-    callback: EventListenerOrEventListenerObject | null,
-    options?: AddEventListenerOptions | boolean
-  ): void;
+export type {
+  QuerySelector,
+  QuerySelectorAll,
+  AddEventListener,
+  RemoveEventListener
+};

@@ -13,6 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const mainEl = $('main');
-  console.log(mainEl);
+  // const mainEl = $('main');
+  // console.log(mainEl);
 });
