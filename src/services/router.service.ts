@@ -5,49 +5,55 @@ export interface IRouter {
 
 const Router: IRouter = {
   init: () => {
-    $$('a.in-link').forEach((e) => {
-      if (e instanceof HTMLAnchorElement) {
-        e.on('click', (event) => {
-          event.preventDefault();
-          const url = new URL(e.href).pathname;
+    $$('a.inLink').forEach((e) => {
+      const anchorElement = e as HTMLAnchorElement;
 
-          Router.go(url);
-        });
-      }
+      anchorElement.addEventListener('click', (event) => {
+        event.preventDefault();
+        const url = new URL(anchorElement.href).pathname;
+
+        Router.go(url);
+      });
     });
-    window.addEventListener('popstate', (event) => {
+
+    window.on('popstate', (event) => {
       Router.go(event.state.route, false);
     });
-    Router.go(location.pathname);
+
+    Router.go(location.pathname, false);
   },
-  go: (route: string, addToHistory = true) => {
+  go: async (route: string, addToHistory = true) => {
     if (addToHistory) {
       history.pushState({ route }, 'null', route);
     }
 
-    let pageElem = null;
+    let pageContent = '';
 
     switch (route) {
       case '/google':
-        pageElem = document.createElement('h1');
-        pageElem.textContent = 'It is /google route, definately!';
+        pageContent = await fetch('/pages/google.html').then((res) =>
+          res.text()
+        );
         break;
       case '/':
-        pageElem = document.createElement('h1');
-        pageElem.textContent = 'It is / route, definately!';
+        pageContent = await fetch('/pages/home.html').then((res) => res.text());
+        break;
+      default:
+        pageContent = '<h1>404 - Page Not Found</h1>';
         break;
     }
 
-    if (pageElem) {
-      const mainElement = $('main');
-      if (mainElement) {
-        mainElement.innerHTML = '';
-        mainElement.appendChild(pageElem);
-        window.scrollY = 0;
-        window.scrollX = 0;
-      }
-    } else {
-      //TODO: create 404 page for not valid route
+    const mainElement = $('main');
+    if (mainElement) {
+      mainElement.innerHTML = '';
+
+      const contentElement = document.createElement('div');
+      contentElement.innerHTML = pageContent;
+
+      mainElement.appendChild(contentElement);
+
+      window.scrollY = 0;
+      window.scrollX = 0;
     }
   }
 };

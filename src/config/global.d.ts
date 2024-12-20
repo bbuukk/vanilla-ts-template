@@ -17,10 +17,10 @@ declare global {
   }
 
   // eslint-disable-next-line
-  interface Document extends DomUtils {}
+  interface Document extends DomUtils { }
 
   // eslint-disable-next-line
-  interface HTMLElement extends DomUtils {}
+  interface HTMLElement extends DomUtils { }
 
   interface Window extends DomUtils {
     _app: {
@@ -32,4 +32,17 @@ declare global {
   declare let $$: (args: string) => NodeListOf<Element>;
 }
 
-export {};
+export { };
+
+  addEventListener<K extends keyof WindowEventMap>(
+    event: K,
+    listener:
+      | ((this: Window | Document | HTMLElement, ev: WindowEventMap[K]) => void)
+      | null,
+    options?: AddEventListenerOptions | boolean
+  ): void;
+  addEventListener(
+    type: string,
+    callback: EventListenerOrEventListenerObject | null,
+    options?: AddEventListenerOptions | boolean
+  ): void;

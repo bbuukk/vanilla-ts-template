@@ -1,3 +1,4 @@
+// Define the utility functions
 function $(this: Document | HTMLElement, args: string): Element | null {
   return this.querySelector(args);
 }
@@ -14,6 +15,26 @@ function on(
 ): void {
   this.addEventListener(eventType, listener, options);
 }
+
+// interface EventListener {
+//   (evt: Event): void;
+// }
+//
+// interface EventListenerObject {
+//   handleEvent(evt: Event): void;
+// }
+
+// function on<K extends keyof WindowEventMap>(
+//   this: EventTarget,
+//   eventType: K,
+//   listener: (this: Window, ev: WindowEventMap[K]) => any,
+//   options?: boolean | AddEventListenerOptions
+// ): void {
+//   this.addEventListener(eventType, listener, options);
+// }
+//
+// addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+//     addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
 
 function off(
   this: EventTarget,

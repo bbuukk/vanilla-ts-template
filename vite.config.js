@@ -5,11 +5,11 @@ import { resolve } from 'path';
 
 export default defineConfig({
   root: 'src',
-  publicDir: './public',
-  envDir: './',
+  publicDir: resolve(__dirname, './public'),
+  envDir: __dirname,
   plugins: [Inspect()],
   build: {
-    outDir: './dist'
+    outDir: resolve(__dirname, './dist')
     // base: '/'
     // sourcemap: true,
     // emptyOutDir: true
