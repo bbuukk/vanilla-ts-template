@@ -1,15 +1,15 @@
 <!--HOW TO WRITE COOL README FILE TUTORIAL https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/-->
-<div align="center" style="display: flex; flex-direction: column;">
-  <img src=".github/images/logo.svg" width="100">
-</div>
-
-<h1 align="center">
-  <div >
-<span > <!-- <a href="">  -->AVAK</span>
-  </div>
-  <br>
-<span align="center"> Vanilla.ts e-commerce web app</span>
-</h3>
+<!-- <div align="center" style="display: flex; flex-direction: column;"> -->
+<!--   <img src=".github/images/logo.svg" width="100"> -->
+<!-- </div> -->
+<!---->
+<!-- <h1 align="center"> -->
+<!--   <div > -->
+<!-- <span > <!-- <a href="">  -->AVAK</span> -->
+<!--   </div> -->
+<!--   <br> -->
+<!-- <span align="center"> Vanilla.ts e-commerce web app</span> -->
+<!-- </h3> -->
 
 <!--
 
